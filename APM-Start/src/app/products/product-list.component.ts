@@ -77,7 +77,12 @@ export class ProductListComponent implements OnInit {
       "imageUrl": "assets/images/xbox-controller.png"
     }
   ];
-  
+
+  performFilter(filterBy: string): IProduct[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().includes(filterBy));
+  }
+
   toggleImage(): void {
     this.showImage = !this.showImage;
   }
@@ -86,8 +91,7 @@ export class ProductListComponent implements OnInit {
     this.listFilter = '';
   }
 
-  performFilter(filterBy: string): IProduct[] {
-    filterBy = filterBy.toLocaleLowerCase();
-    return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().includes(filterBy));
+  onRatingClicked(message: string): void {
+    this.pageTitle = `Product List: ${message}`;
   }
 }
