@@ -19,7 +19,7 @@ The following are detailed instructions for installing the code so you can code 
 
    If you download as a zip file, be sure to unzip it.
 
-2) Navigate to the APM-Start folder (or APM folder if you renamed it).
+2) Navigate to the APM-Start folder.
 
    There should be a package.json file in this folder.
 
